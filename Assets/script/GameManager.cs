@@ -60,12 +60,16 @@ public class GameManager : MonoBehaviour
 
     public void UpdateHealth(int amount)
     {
+        Debug.Log("UpdateHealth called. Current health: " + health + ", amount: " + amount);
         if (isGameOver) return;
 
         health += amount;
 
+        Debug.Log("Health after update: " + health);
+
         if (health <= 0)
         {
+            Debug.Log("Health is zero or less, calling EndGame.");
             EndGame();
         }
     }
@@ -91,10 +95,18 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    [ContextMenu("Force Game Over")]
+    public void ForceGameOver()
+    {
+        Debug.Log("ForceGameOver called.");
+        health = 0;
+        EndGame();
+    }
+
     private void SaveScore(int scoreToSave)
     {
         // Load existing scores JSON string
-        string json = PlayerPrefs.GetString("ScoreHistory", "[]");
+        string json = PlayerPrefs.GetString("ScoreHistory", "{\"entries\":[]}");
         ScoreEntryList scoreList = JsonUtility.FromJson<ScoreEntryList>(json);
 
         if (scoreList == null)
