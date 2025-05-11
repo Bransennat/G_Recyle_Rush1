@@ -1,7 +1,15 @@
 fileFormatVersion: 2
-guid: 6dc7e2bfcb081f54abd1d417bac5b8b8
+guid: f39d1e8b6224cde4d906c3065b2d4be6
 PrefabImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 177291
+  packageName: Leaderboard Manager | CG
+  packageVersion: 2.2.2
+  assetPath: Assets/Carter Games/Leaderboard Manager/Prefabs/Display/+Leaderboard
+    Entry Display (TMP).prefab
+  uploadId: 664550

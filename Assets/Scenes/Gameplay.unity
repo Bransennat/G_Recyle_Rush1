@@ -2092,7 +2092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  health: 3
+  health: 1
   currentInstruction: 0
   scoreText: {fileID: 1624231372}
   healthText: {fileID: 2062516399}

@@ -1,7 +1,8 @@
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Linq;
 
 public class LeaderboardUI : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class LeaderboardUI : MonoBehaviour
 
     void LoadScores()
     {
-        string json = PlayerPrefs.GetString("ScoreHistory", "[]");
+        string json = PlayerPrefs.GetString("ScoreHistory", "{\"entries\":[]}");
         ScoreEntryList scoreList = JsonUtility.FromJson<ScoreEntryList>(json);
 
         if (scoreList != null && scoreList.entries != null)
@@ -52,15 +53,25 @@ public class LeaderboardUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        // Display scores in reverse order (most recent first)
-        for (int i = scoreEntries.Count - 1; i >= 0; i--)
+        // Sort scores in descending order (highest first)
+        scoreEntries.Sort((a, b) => b.score.CompareTo(a.score));
+
+        // Take the top 100 scores
+        var topScores = scoreEntries.Take(100).ToList();
+
+        // Display scores with rank numbers
+        for (int i = 0; i < topScores.Count; i++)
         {
-            ScoreEntry entry = scoreEntries[i];
+            ScoreEntry entry = topScores[i];
             GameObject entryGO = Instantiate(scoreEntryPrefab, contentPanel);
             TextMeshProUGUI[] texts = entryGO.GetComponentsInChildren<TextMeshProUGUI>();
             foreach (var text in texts)
             {
-                if (text.gameObject.name == "ScoreText")
+                if (text.gameObject.name == "RankText")
+                {
+                    text.text = (i + 1).ToString(); // Rank (1, 2, 3, ...)
+                }
+                else if (text.gameObject.name == "ScoreText")
                 {
                     text.text = entry.score.ToString();
                 }

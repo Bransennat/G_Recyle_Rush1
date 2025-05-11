@@ -7,4 +7,9 @@ public class MainMenuUI : MonoBehaviour
     {
         SceneManager.LoadScene("Gameplay");
     }
+
+    public void OnLeaderboardButton()
+    {
+        SceneManager.LoadScene("Leaderboard");
+    }
 }
