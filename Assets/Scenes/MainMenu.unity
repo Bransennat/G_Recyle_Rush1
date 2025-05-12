@@ -294,8 +294,8 @@ Transform:
   m_GameObject: {fileID: 193723461}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0970137, y: -0.10363479, z: -1}
-  m_LocalScale: {x: 1.0941201, y: 1.0916282, z: 1}
+  m_LocalPosition: {x: -0.748, y: -0.757, z: -1}
+  m_LocalScale: {x: 1.0766143, y: 1.1571258, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 293223681}
@@ -498,6 +498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 293223681}
   - component: {fileID: 293223680}
+  - component: {fileID: 293223682}
   m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
@@ -569,14 +570,28 @@ Transform:
   m_GameObject: {fileID: 293223679}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.008699998, y: 0.13380003, z: 1}
-  m_LocalScale: {x: 0.4478522, y: 0.519131, z: 1}
+  m_LocalPosition: {x: 0.0643, y: -0.04, z: 1}
+  m_LocalScale: {x: 0.41666666, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 193723462}
   - {fileID: 994785025}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &293223682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293223679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f3e064e341e74298477c73df396c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCamera: {fileID: 784196464}
+  spriteRenderer: {fileID: 293223680}
 --- !u!1 &517118891
 GameObject:
   m_ObjectHideFlags: 0
