@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2803465975382856829
+--- !u!1001 &1897320956201830529
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,23 +10,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 801586267413711969, guid: 98839bec011b69e47a27a282eb718d3c, type: 3}
       propertyPath: m_Size.x
-      value: 1.135
+      value: 0.685
       objectReference: {fileID: 0}
     - target: {fileID: 801586267413711969, guid: 98839bec011b69e47a27a282eb718d3c, type: 3}
       propertyPath: m_Size.y
-      value: 1.885
+      value: 1.51
       objectReference: {fileID: 0}
     - target: {fileID: 801586267413711969, guid: 98839bec011b69e47a27a282eb718d3c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7506680604602429903, guid: f36164833bfe5f54c873c2b4831438eb, type: 3}
+      objectReference: {fileID: -6999936710424723473, guid: f36164833bfe5f54c873c2b4831438eb, type: 3}
     - target: {fileID: 801586267413711969, guid: 98839bec011b69e47a27a282eb718d3c, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3465009382705203577, guid: 98839bec011b69e47a27a282eb718d3c, type: 3}
       propertyPath: m_Name
-      value: daun
+      value: botol beling
       objectReference: {fileID: 0}
     - target: {fileID: 4514366130346097605, guid: 98839bec011b69e47a27a282eb718d3c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -78,23 +78,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5782416365876502451, guid: 98839bec011b69e47a27a282eb718d3c, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 1.135
+      value: 0.685
       objectReference: {fileID: 0}
     - target: {fileID: 5782416365876502451, guid: 98839bec011b69e47a27a282eb718d3c, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 1.885
+      value: 1.51
       objectReference: {fileID: 0}
     - target: {fileID: 5782416365876502451, guid: 98839bec011b69e47a27a282eb718d3c, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.135
+      value: 0.685
       objectReference: {fileID: 0}
     - target: {fileID: 5782416365876502451, guid: 98839bec011b69e47a27a282eb718d3c, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.885
+      value: 1.51
       objectReference: {fileID: 0}
     - target: {fileID: 5782416365876502451, guid: 98839bec011b69e47a27a282eb718d3c, type: 3}
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074092169274870135, guid: 98839bec011b69e47a27a282eb718d3c, type: 3}
+      propertyPath: trashType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

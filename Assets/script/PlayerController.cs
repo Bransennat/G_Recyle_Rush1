@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
         if (moveDirection != 0 && spriteRenderer != null)
         {
-            spriteRenderer.flipX = moveDirection < 0;
+            spriteRenderer.flipX = moveDirection > 0;
         }
     }
 
