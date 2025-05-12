@@ -12,4 +12,9 @@ public class MainMenuUI : MonoBehaviour
     {
         SceneManager.LoadScene("Leaderboard");
     }
+
+    public void LoadSceneTrashInfo()
+    {
+        SceneManager.LoadScene("TrashInfo");
+    }
 }
