@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,8 +17,9 @@ public class PlayerController : MonoBehaviour
     public string jumpParam = "isJumping";
 
     private Rigidbody2D rb;
-    private int moveDirection = 0;
     private bool isGrounded = false;
+
+    [SerializeField] private InputActionReference moveActionToUse;
 
     void Start()
     {
@@ -27,33 +29,43 @@ public class PlayerController : MonoBehaviour
             animator = GetComponent<Animator>();
         if (spriteRenderer == null)
             spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (moveActionToUse != null && moveActionToUse.action != null)
+        {
+            moveActionToUse.action.Enable(); // Enable the InputAction
+        }
     }
 
     void Update()
     {
-        rb.linearVelocity = new Vector2(moveDirection * moveSpeed, rb.linearVelocity.y);
+        if (moveActionToUse != null && moveActionToUse.action != null)
+    {
+        // Read joystick input
+        Vector2 inputDirection = moveActionToUse.action.ReadValue<Vector2>();
 
+        // Apply movement to Rigidbody
+        rb.linearVelocity = new Vector2(inputDirection.x * moveSpeed, rb.linearVelocity.y); // Corrected to use rb.velocity
+
+        // Update animations
         if (animator != null)
         {
             animator.SetFloat(speedParam, Mathf.Abs(rb.linearVelocity.x));
             animator.SetBool(jumpParam, !isGrounded);
         }
 
-        if (moveDirection != 0 && spriteRenderer != null)
+        // Flip sprite based on movement direction
+        if (inputDirection.x != 0 && spriteRenderer != null)
         {
-            spriteRenderer.flipX = moveDirection > 0;
+            spriteRenderer.flipX = inputDirection.x > 0;
         }
     }
-
-    public void MoveLeft() => moveDirection = -1;
-    public void MoveRight() => moveDirection = 1;
-    public void StopMoving() => moveDirection = 0;
+    }
 
     public void Jump()
     {
         if (isGrounded)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce); // Corrected to use rb.velocity
             isGrounded = false;
         }
     }
