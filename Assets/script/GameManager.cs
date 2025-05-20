@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         trashSpawner = Object.FindFirstObjectByType<TrashSpawner>();
-        currentInstruction = (Random.Range(0, 2) == 0) ? Trash.TrashType.Organik : Trash.TrashType.Anorganik;
+        currentInstruction = (Random.Range(0, 2) == 0) ? Trash.TrashType.Organic : Trash.TrashType.inorganic;
     }
 
     void Update()
@@ -32,9 +32,9 @@ public class GameManager : MonoBehaviour
 
     public void GenerateInstruction()
     {
-        currentInstruction = currentInstruction == Trash.TrashType.Organik
-            ? Trash.TrashType.Anorganik
-            : Trash.TrashType.Organik;
+        currentInstruction = currentInstruction == Trash.TrashType.Organic
+            ? Trash.TrashType.inorganic
+            : Trash.TrashType.Organic;
     }
 
     public void UpdateScore(int amount)
@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
 
     void UpdateUI()
     {
-        scoreText.text = "Skor: " + score;
+        scoreText.text = "SCORE: " + score;
         healthText.text = "HP: " + health;
         instructionText.text = "Ambil sampah " + currentInstruction.ToString().ToLower();
     }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Trash : MonoBehaviour
 {
-    public enum TrashType { Organik, Anorganik }
+    public enum TrashType { Organic, inorganic }
     public TrashType trashType;
 
     private bool hasTouchedGround = false;
